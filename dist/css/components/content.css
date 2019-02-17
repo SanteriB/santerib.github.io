@@ -1,0 +1,20 @@
+.content {
+  display: flex;
+}
+.content_leftcol {
+  width: 15%;
+  color: #000;
+  padding: 1rem;
+}
+.content_main {
+  width: 85%;
+  padding: 1rem;
+}
+.tutorial {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.tutorial_firstlevelitem {
+  cursor: pointer;
+}
