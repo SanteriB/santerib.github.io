@@ -6,14 +6,22 @@
         padding 1rem
     &_main
         width 85%
-        padding 1rem
+        padding 1rem 2rem
         
 .tutorial
     list-style none
     padding 0
-    margin 0
+    margin 0.5rem 0
     &_firstlevelitem
         cursor pointer
+        padding 0.25rem 1rem
+        &:hover:not(^[0]_title)
+            font-weight 500
+            background-color #efefef
+    &_title
+        margin-bottom 0.5rem
+        font-weight 700
+        padding 0.25rem 1rem 0.25rem 0.5rem
     &_content
         //
         
