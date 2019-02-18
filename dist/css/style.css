@@ -211,6 +211,9 @@ h1 {
   width: 85%;
   padding: 1rem 2rem;
 }
+.content code {
+  background-color: #efefef;
+}
 .tutorial {
   list-style: none;
   padding: 0;
@@ -228,4 +231,12 @@ h1 {
   margin-bottom: 0.5rem;
   font-weight: 700;
   padding: 0.25rem 1rem 0.25rem 0.5rem;
+}
+.tutorial_example {
+  margin: 1rem 0;
+}
+.code-example {
+  background-color: #efefef;
+  max-width: 600px;
+  padding: 0.5rem;
 }
