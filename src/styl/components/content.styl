@@ -31,3 +31,27 @@
     background-color #efefef
     max-width 600px
     padding 0.5rem
+    
+.tabs
+    &-example
+        display flex
+        &-content
+            width 480px
+    & .tab
+        display flex
+        justify-content center
+        align-items center
+        width 120px
+        height 30px
+        cursor pointer
+        font-weight 600
+        border-bottom 1px solid #000
+        &.active
+            border 1px solid #000
+            border-bottom none
+            border-top-left-radius 8px
+            border-top-right-radius 8px
+        &-content
+            display none
+            &.active
+                display block
