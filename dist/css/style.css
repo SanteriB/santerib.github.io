@@ -243,6 +243,7 @@ h1 {
 .tabs {
   display: none;
   max-width: 480px;
+  margin-top: 1rem;
 }
 .tabs-example {
   display: flex;
