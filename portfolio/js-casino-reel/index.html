@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="dist/css/style.css">
+</head>
+<body>
+	<div id="slotmachine" class="slotmachine">
+		<div class="reel_wrapper">
+			<div class="reel_shadow"></div>
+			<div id="reel1" class="reel">
+				<div class="reel_slot" data-itemid="5" data-item="3xBAR" data-itemsnum="3">
+					<div class="reel_slotItem"><img src="dist/img/3xBAR.png"></div>
+				</div>
+				<div class="reel_slot" data-itemid="3" data-item="BAR" data-itemsnum="1">
+					<div class="reel_slotItem"><img src="dist/img/BAR.png"></div>
+				</div>
+				<div class="reel_slot" data-itemid="4" data-item="2xBAR" data-itemsnum="2">
+					<div class="reel_slotItem"><img src="dist/img/2xBAR.png"></div>
+				</div>
+				<div class="reel_slot" data-itemid="2" data-item="7" data-itemsnum="1">
+					<div class="reel_slotItem"><img src="dist/img/7.png"></div>
+				</div>
+				<div class="reel_slot" data-itemid="1" data-item="Cherry" data-itemsnum="1">
+					<div class="reel_slotItem"><img src="dist/img/Cherry.png"></div>
+				</div>
+			</div>
+			<div id="reel2" class="reel">
+				<div class="reel_slot" data-itemid="5" data-item="3xBAR" data-itemsnum="3">
+					<div class="reel_slotItem"><img src="dist/img/3xBAR.png"></div>
+				</div>
+				<div class="reel_slot" data-itemid="3" data-item="BAR" data-itemsnum="1">
+					<div class="reel_slotItem"><img src="dist/img/BAR.png"></div>
+				</div>
+				<div class="reel_slot" data-itemid="4" data-item="2xBAR" data-itemsnum="2">
+					<div class="reel_slotItem"><img src="dist/img/2xBAR.png"></div>
+				</div>
+				<div class="reel_slot" data-itemid="2" data-item="7" data-itemsnum="1">
+					<div class="reel_slotItem"><img src="dist/img/7.png"></div>
+				</div>
+				<div class="reel_slot" data-itemid="1" data-item="Cherry" data-itemsnum="1">
+					<div class="reel_slotItem"><img src="dist/img/Cherry.png"></div>
+				</div>
+			</div>
+			<div id="reel3" class="reel">
+				<div class="reel_slot" data-itemid="5" data-item="3xBAR" data-itemsnum="3">
+					<div class="reel_slotItem"><img src="dist/img/3xBAR.png"></div>
+				</div>
+				<div class="reel_slot" data-itemid="3" data-item="BAR" data-itemsnum="1">
+					<div class="reel_slotItem"><img src="dist/img/BAR.png"></div>
+				</div>
+				<div class="reel_slot" data-itemid="4" data-item="2xBAR" data-itemsnum="2">
+					<div class="reel_slotItem"><img src="dist/img/2xBAR.png"></div>
+				</div>
+				<div class="reel_slot" data-itemid="2" data-item="7" data-itemsnum="1">
+					<div class="reel_slotItem"><img src="dist/img/7.png"></div>
+				</div>
+				<div class="reel_slot" data-itemid="1" data-item="Cherry" data-itemsnum="1">
+					<div class="reel_slotItem"><img src="dist/img/Cherry.png"></div>
+				</div>
+			</div>
+		</div>
+		<div class="slotmachine_controls">
+			<div class="slotmachine_controlsSection left">
+				<div class="slotmachine_balance">My balance: <span id="balance"></span></div>
+				<small>(min = 1; max = 5000)</small>
+				<div class="slotmachine_wallet">
+					<button id="refreshbalance" class="slotmachine_button">Add coins</button>
+					<input id="wallet" type="number" min="1" max="5000" value="3000"> <!-- this validation is enough for google chrome -->
+				</div>
+			</div>
+			<div class="slotmachine_controlsSection right">
+				<button id="start" class="slotmachine_button slotmachine_start">spin</button>
+				<div class="slotmachine_winning">
+					Current win: <span id="currentwin">0</span>
+				</div>
+				<div class="slotmachine_winning">
+					Winning: <span id="winning">0</span>
+					<a id="addtowallet" class="slotmachine_link">(Add to wallet)</a>
+				</div>
+			</div>
+		</div>
+		<a id="toggledebug" class="slotmachine_link">Toggle Debug area</a>
+		<div id="debugconsole" class="slotmachine_debug">
+			<div class="slotmachine_debugPanel left">
+				<div>
+					<select id="debug-reel1" class="slotmachine_debugReel" disabled="disabled">
+						<option value="3">BAR</option>
+						<option value="4">2xBAR</option>
+						<option value="5">3xBAR</option>
+						<option value="2">7</option>
+						<option value="1">Cherry</option>
+					</select>
+					<select id="debug-reel1-pos" class="slotmachine_debugReel" disabled="disabled">
+						<option value="0">top</option>
+						<option value="1">center</option>
+						<option value="2">bottom</option>
+					</select>
+				</div>
+				<div>
+					<select id="debug-reel2" class="slotmachine_debugReel" disabled="disabled">
+						<option value="3">BAR</option>
+						<option value="4">2xBAR</option>
+						<option value="5">3xBAR</option>
+						<option value="2">7</option>
+						<option value="1">Cherry</option>
+					</select>
+					<select id="debug-reel2-pos" class="slotmachine_debugReel" disabled="disabled">
+						<option value="0">top</option>
+						<option value="1">center</option>
+						<option value="2">bottom</option>
+					</select>
+				</div>
+				<div>
+					<select id="debug-reel3" class="slotmachine_debugReel" disabled="disabled">
+						<option value="3">BAR</option>
+						<option value="4">2xBAR</option>
+						<option value="5">3xBAR</option>
+						<option value="2">7</option>
+						<option value="1">Cherry</option>
+					</select>
+					<select id="debug-reel3-pos" class="slotmachine_debugReel" disabled="disabled">
+						<option value="0">top</option>
+						<option value="1">center</option>
+						<option value="2">bottom</option>
+					</select>
+				</div>
+			</div>
+			<div class="slotmachine_debugPanel right">
+				<input id="debugon" type="checkbox">
+				<label for="debugon">Debug mod</label>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="dist/js/script.js"></script>
+</body>
+</html>

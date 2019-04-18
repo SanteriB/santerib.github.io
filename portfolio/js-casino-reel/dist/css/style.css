@@ -1,0 +1,180 @@
+body {
+  font-family: sans-serif;
+}
+.slotmachine {
+  width: 600px;
+  height: auto;
+  border-radius: 16px;
+  margin: 100px auto;
+  padding: 20px;
+  background: #adbbff;
+  box-shadow: 0px 0px 4px 1px #000;
+}
+.slotmachine_button {
+  display: inline-block;
+  height: 44px;
+  width: 180px;
+  font-size: 24px;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 0px 2px 1px #000;
+}
+.slotmachine_button:active {
+  box-shadow: inset 0px 0px 2px 1px #000;
+  font-size: 23px;
+}
+.slotmachine_button:disabled {
+  cursor: auto;
+}
+.slotmachine_controls {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 64px;
+}
+.slotmachine_controlsSection {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 16px;
+  margin: 0;
+  box-sizing: border-box;
+}
+.slotmachine_controlsSection.left {
+  width: 370px;
+}
+.slotmachine_controlsSection.right {
+  width: 230px;
+}
+.slotmachine_balance {
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 3px;
+  font-size: 24px;
+}
+.slotmachine_balance #balance {
+  display: inline-block;
+  box-sizing: border-box;
+}
+.slotmachine_wallet #wallet {
+  display: inline-block;
+  height: 0;
+  margin-left: 8px;
+  padding: 0 8px;
+  border: none;
+  font-size: 24px;
+  box-sizing: border-box;
+  transition: height 0.2s linear;
+}
+.slotmachine_start {
+  margin-bottom: 16px;
+  background: #38e400;
+}
+.slotmachine_start:disabled {
+  background: #e0e0e0;
+}
+.slotmachine_winning {
+  width: 100%;
+  padding: 3px;
+  font-size: 24px;
+}
+.slotmachine_link {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 16px;
+  color: #00f;
+  text-decoration: underline;
+}
+.slotmachine_debug {
+  position: relative;
+  display: flex;
+  height: 0px;
+  margin: 16px -16px -16px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  background: #e5e9ff;
+  overflow: hidden;
+  transition: height 0.2s linear;
+}
+.slotmachine_debugPanel.left {
+  margin-right: 16px;
+}
+.slotmachine_debugPanel.right input,
+.slotmachine_debugPanel.right label {
+  margin-top: 16px;
+  font-size: 24px;
+  width: 20px;
+  height: 20px;
+}
+.slotmachine_debugReel {
+  margin: 16px 0 16px 16px;
+  padding: 0 8px;
+  border: none;
+  font-size: 24px;
+  box-sizing: border-box;
+}
+.reel {
+  padding: 0 16px;
+  margin-top: -30px;
+  width: 145px;
+  height: 310px;
+}
+.reel_wrapper {
+  position: relative;
+  width: 600px;
+  height: 280px;
+  border: 2px solid #000;
+  border-radius: 16px;
+  background: #fff;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  overflow: hidden;
+}
+.reel_shadow {
+  position: absolute;
+  width: 600px;
+  height: 280px;
+  box-shadow: inset 0px 0px 9px 5px #000;
+  z-index: 5;
+}
+.reel_slot {
+  position: relative;
+  display: flex;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  width: 145px;
+  justify-content: center;
+  height: 125px;
+  transition: all 0.1s linear;
+}
+.reel_slot:nth-child(1) {
+  height: 0;
+}
+.reel_slot:nth-child(2) {
+  align-items: flex-start;
+}
+.reel_slot:nth-child(4) {
+  align-items: flex-end;
+}
+.reel_slot:nth-child(2) .reel_slotItem {
+  bottom: 0;
+}
+.reel_slot:nth-child(4) .reel_slotItem {
+  top: 0;
+}
+.reel_slotItem {
+  position: absolute;
+}
+
+/*# sourceMappingURL=style.css.map */
