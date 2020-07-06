@@ -79,7 +79,9 @@
 						} );
 
 						loadingManager.onLoad = function() {
-							trunk.position = reticle.position;
+							trunk.position.setX(reticle.position.x);
+							trunk.position.setY(reticle.position.y);
+							trunk.position.setZ(reticle.position.z);
 							scene.add( trunk );
 						}
 
