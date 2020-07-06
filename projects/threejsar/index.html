@@ -77,10 +77,12 @@
 						loader.load( './trunk/source/model/model.dae', function ( collada ) {
 							trunk = collada.scene;
 						} );
-						
+
 						loadingManager.onLoad = function() {
 							trunk.scale.y = Math.random() * 2 + 1;
-						}			
+						}	
+						
+						loader.position.setFromMatrixPosition( reticle.matrix );
 
 						scene.add( trunk );
 
