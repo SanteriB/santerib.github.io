@@ -71,15 +71,15 @@
 						mesh.scale.y = Math.random() * 2 + 1;
 						scene.add( mesh );
 
-						var loader = new GLTFLoader().setPath( 'fridge/' );
-						loader.load( 'scene.gltf', function ( gltf ) {
+						// var loader = new GLTFLoader().setPath( 'fridge/' );
+						// loader.load( 'scene.gltf', function ( gltf ) {
 
-							gltf.scene.position.set(reticle.position.x - 0.25, reticle.position.y - 0.5, reticle.position.z - 1);
-							gltf.scene.scale.set(0.001, 0.001, 0.001);
+						// 	gltf.scene.position.set(reticle.position.x - 0.25, reticle.position.y - 0.5, reticle.position.z - 1);
+						// 	gltf.scene.scale.set(0.001, 0.001, 0.001);
 
-							scene.add( gltf.scene );
+						// 	scene.add( gltf.scene );
 
-						} );
+						// } );
 
 					}
 
