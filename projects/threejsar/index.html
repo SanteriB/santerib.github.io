@@ -69,7 +69,7 @@
 						var mesh = new THREE.Mesh( geometry, material );
 						mesh.position.setFromMatrixPosition( reticle.matrix );
 						mesh.scale.y = Math.random() * 2 + 1;
-						scene.add( mesh );
+						// scene.add( mesh );
 
 						var loadingManager = new THREE.LoadingManager();
 						var loader = new ColladaLoader( loadingManager );
