@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>three.js ar - hit test</title>
+		<title>three.js ar - test</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-        <link type="text/css" rel="stylesheet" href="main.css?1594041239275">
+        <link type="text/css" rel="stylesheet" href="main.css?1594049312828">
 	</head>
 	<body>
 
@@ -19,7 +19,7 @@
 			import { ColladaLoader } from './libs/jsm/loaders/ColladaLoader.js';
 
 			var container;
-			var camera, scene, renderer, fridge;
+			var camera, scene, renderer, trunk;
 			var controller;
 
 			var reticle;
@@ -43,17 +43,16 @@
 
 				var loadingManager = new THREE.LoadingManager( function () {
 
-					scene.add( fridge );
+					scene.add( trunk );
 
 				} );
 
 				// collada
 
 				var loader = new ColladaLoader( loadingManager );
-				loader.load( './fridge/source/model/model.dae', function ( collada ) {
+				loader.load( './trunk/source/model/model.dae', function ( collada ) {
 
-					fridge = collada.scene;
-					console.log(fridge);
+					trunk = collada.scene;
 
 				} );
 
@@ -88,7 +87,7 @@
 						mesh.position.setFromMatrixPosition( reticle.matrix );
 						mesh.scale.y = Math.random() * 2 + 1;
 						scene.add( mesh );
-						scene.add( fridge );
+						scene.add( trunk );
 
 					}
 
