@@ -16,10 +16,10 @@
 
 			import * as THREE from './build/three.module.js';
 			import { ARButton } from './libs/jsm/webxr/ARButton.js';
-			import { ColladaLoader } from './libs/jsm/loaders/ColladaLoader.js';
+			import { GLTFLoader } from './libs/jsm/loaders/GLTFLoader.js';
 
 			var container;
-			var camera, scene, renderer, trunk;
+			var camera, scene, renderer, fridge;
 			var controller;
 
 			var reticle;
@@ -69,21 +69,17 @@
 						var mesh = new THREE.Mesh( geometry, material );
 						mesh.position.setFromMatrixPosition( reticle.matrix );
 						mesh.scale.y = Math.random() * 2 + 1;
-						// scene.add( mesh );
+						scene.add( mesh );
 
-						var loadingManager = new THREE.LoadingManager();
-						var loader = new ColladaLoader( loadingManager );
+						var loader = new GLTFLoader().setPath( 'fridge/' );
+						loader.load( 'scene.gltf', function ( gltf ) {
 
-						loader.load( './trunk/source/model/model.dae', function ( collada ) {
-							trunk = collada.scene;
+							gltf.scene.position.set(reticle.position.x - 0.25, reticle.position.y - 0.5, reticle.position.z - 1);
+							gltf.scene.scale.set(0.001, 0.001, 0.001);
+
+							scene.add( gltf.scene );
+
 						} );
-
-						loadingManager.onLoad = function() {
-							trunk.position.setX(reticle.position.x);
-							trunk.position.setY(reticle.position.y);
-							trunk.position.setZ(reticle.position.z);
-							scene.add( trunk );
-						}
 
 					}
 
@@ -100,6 +96,16 @@
 				reticle.matrixAutoUpdate = false;
 				reticle.visible = false;
 				scene.add( reticle );
+
+				var loader = new GLTFLoader().setPath( 'fridge/' );
+				loader.load( 'scene.gltf', function ( gltf ) {
+
+					gltf.scene.position.set(reticle.position.x - 0.25, reticle.position.y - 0.5, reticle.position.z - 1);
+					gltf.scene.scale.set(0.001, 0.001, 0.001);
+
+					scene.add( gltf.scene );
+
+				} );
 
 				//
 
