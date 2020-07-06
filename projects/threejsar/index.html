@@ -41,11 +41,7 @@
 
 				// loading manager
 
-				var loadingManager = new THREE.LoadingManager( function () {
-
-					scene.add( trunk );
-
-				} );
+				var loadingManager = new THREE.LoadingManager();
 
 				// collada
 
@@ -55,6 +51,15 @@
 					trunk = collada.scene;
 
 				} );
+
+				loadingManager.onLoad = function() {
+					console.log( 'Loading complete!');
+				}	
+
+
+				loadingManager.onProgress = function ( url, itemsLoaded, itemsTotal ) {
+					console.log( 'Loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.' );
+				};			
 
 				//
 
