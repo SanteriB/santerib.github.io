@@ -39,28 +39,6 @@
 
 				camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.01, 20 );
 
-				// loading manager
-
-				var loadingManager = new THREE.LoadingManager();
-
-				// collada
-
-				var loader = new ColladaLoader( loadingManager );
-				loader.load( './trunk/source/model/model.dae', function ( collada ) {
-
-					trunk = collada.scene;
-
-				} );
-
-				loadingManager.onLoad = function() {
-					console.log( 'Loading complete!');
-				}	
-
-
-				loadingManager.onProgress = function ( url, itemsLoaded, itemsTotal ) {
-					console.log( 'Loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.' );
-				};			
-
 				//
 
 				var light = new THREE.HemisphereLight( 0xffffff, 0xbbbbff, 1 );
@@ -92,6 +70,18 @@
 						mesh.position.setFromMatrixPosition( reticle.matrix );
 						mesh.scale.y = Math.random() * 2 + 1;
 						scene.add( mesh );
+
+						var loadingManager = new THREE.LoadingManager();
+						var loader = new ColladaLoader( loadingManager );
+
+						loader.load( './trunk/source/model/model.dae', function ( collada ) {
+							trunk = collada.scene;
+						} );
+						
+						loadingManager.onLoad = function() {
+							trunk.scale.y = Math.random() * 2 + 1;
+						}			
+
 						scene.add( trunk );
 
 					}
