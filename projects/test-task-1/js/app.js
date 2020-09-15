@@ -1,15 +1,18 @@
 const tree = {
     'country': {
+        'fieldname': 'Страна',
         'name': 'city',
         'url': 'json/cities.json',
         'filterParameter': false
     },
     'city': {
+        'fieldname': 'Город',
         'name': 'airport',
         'url': 'json/airports.json',
         'filterParameter': 'country_code'
     },
     'airport': {
+        'fieldname': 'Aэропорт',
         'name': false,
         'url': false,
         'filterParameter': 'city_code'
@@ -23,6 +26,7 @@ function app() {
         method: 'GET',
         container: document.querySelector('#form-airport'),
         id: 'country',
+        fieldname: 'Страна',
         childData: tree['country'],
         filterParameter: false
     });
@@ -73,6 +77,7 @@ function getFormField(params) {
                     }
                 });
 
+                label.appendChild(document.createTextNode(params.fieldname));
                 field.appendChild(label);
                 field.appendChild(select);
                 params.container.appendChild(field);
@@ -91,6 +96,7 @@ function getFormField(params) {
                             method: params.method,
                             container: params.container,
                             id: params.childData.name,
+                            fieldname: tree[params.childData.name].fieldname,
                             childData: tree[params.childData.name],
                             filterParameter: item.target.value
                         });
