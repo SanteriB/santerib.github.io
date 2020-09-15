@@ -134,7 +134,7 @@ function getFormField(params) {
 }
 
 function setAttributes(element, attributes) {
-    for(var key in attributes) {
+    for(let key in attributes) {
         element.setAttribute(key, attributes[key]);
     }
 }
