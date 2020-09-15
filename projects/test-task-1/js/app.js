@@ -41,6 +41,7 @@ function getFormField(params) {
                 const field = document.createElement('div');
                 const label = document.createElement('label');
                 const select = document.createElement('select');
+                const emptyOption = document.createElement('option');
 
                 setAttributes(field, {
                     'class': 'form-field'
@@ -54,6 +55,13 @@ function getFormField(params) {
                     'id': params.id, 
                     'name': params.id
                 });
+                setAttributes(emptyOption, {
+                    'selected': true,
+                    'disabled': true
+                });
+
+                emptyOption.appendChild(document.createTextNode('выберите значение...'));
+                select.appendChild(emptyOption);
 
                 response.forEach(item => {
                     if (params.filterParameter) {
@@ -143,7 +151,6 @@ function removeNextSiblings(elementData) {
 }
 
 function showAirportData(params) {
-    console.log(params);
     if (params.data) {
         params.data.forEach(item => {
             if (params.filterParameter == item.code) {                
