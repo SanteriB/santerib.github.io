@@ -25,9 +25,9 @@ const getQuestion = (dict, word, quiz) => {
 
         newDiv.addEventListener("click", () => {
             if (num === randomWord.right) {
-                alert("right");
+                alert("Right.");
             } else {
-                alert("wrong");
+                alert(`Wrong. Right: ${dict[randomWord.right].ru}`);
             }
 
             quiz.innerHTML = "";
