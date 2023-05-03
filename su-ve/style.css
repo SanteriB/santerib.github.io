@@ -1,0 +1,63 @@
+h1 {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+#word {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#quiz>div {
+    text-align: center;
+    display: flex;
+    margin: 20px auto;
+    width: 300px;
+    font-size: 24px;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    border: 2px solid #1f1f1f;
+    background: #efefef;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#underTitle {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 24px;
+}
+
+#menu {
+    display: none;
+    text-align: center;
+    margin: -12px auto 20px;
+    font-size: 24px;
+}
+
+#menu a {
+    color: blue;
+}
+
+#menuLink {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#menuClose {
+    color: white;
+    background: blue;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto -16px auto 16px;
+    width: 24px;
+    height: 24px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+}

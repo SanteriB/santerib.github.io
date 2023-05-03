@@ -42,5 +42,17 @@ const getQuestion = (dict, word, quiz) => {
     const word = document.querySelector("#word");
     const quiz = document.querySelector("#quiz");
 
+    let isMenuVisible = false;
+    const toggleMenu = () => {
+        if (isMenuVisible) {
+            document.querySelector("#menu").style.display = "none";
+        } else {
+            document.querySelector("#menu").style.display = "block";
+        }
+        isMenuVisible = !isMenuVisible;
+    };
+    document.querySelector("#menuLink").addEventListener("click", toggleMenu);
+    document.querySelector("#menuClose").addEventListener("click", toggleMenu);
+
     getQuestion(dict, word, quiz);
 })();
