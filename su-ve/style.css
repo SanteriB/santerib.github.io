@@ -39,6 +39,8 @@ h1 {
 
 #menu a {
     color: blue;
+    display: block;
+    margin-bottom: 8px;
 }
 
 #menuLink {
@@ -50,10 +52,10 @@ h1 {
 #menuClose {
     color: white;
     background: blue;
-    display: inline-flex;
+    display: flex;
     justify-content: center;
     align-items: center;
-    margin: auto -16px auto 16px;
+    margin: 16px auto 0;
     width: 24px;
     height: 24px;
     font-size: 16px;
