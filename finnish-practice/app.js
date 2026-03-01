@@ -72,17 +72,22 @@ function memorizeCurrent() {
     mem.push(item.phrase);
     saveMemorized(mem);
   }
-  // remove from queue and render next
+  // remove from queue and render next card only; update memorized list
   queue.splice(currentIndex, 1);
   if (currentIndex >= queue.length) currentIndex = 0;
-  render();
+  updateMemorizedSection();
+  renderQuizCard();
 }
 
 function unmemorize(phrase) {
   const mem = loadMemorized().filter(p => p !== phrase);
   saveMemorized(mem);
-  buildQueue();
-  render();
+  // Add item back into the working queue without forcing a full re-render
+  const item = dict.find(d => d.phrase === phrase);
+  if (item && !queue.some(q => q.phrase === phrase)) {
+    queue.push(item);
+  }
+  updateMemorizedSection();
 }
 
 function renderLocaleSelect(container) {
@@ -209,6 +214,18 @@ function renderMemorizedList(container) {
   });
   section.appendChild(list);
   return section;
+}
+
+function updateMemorizedSection() {
+  const root = document.getElementById('app');
+  if (!root) return;
+  const old = root.querySelector('.memorized');
+  const newSection = renderMemorizedList(root);
+  if (old) {
+    old.replaceWith(newSection);
+  } else {
+    root.appendChild(newSection);
+  }
 }
 
 function render() {
